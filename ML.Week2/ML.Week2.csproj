@@ -8,11 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\LC.Common\LC.Common.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
+    <ProjectReference Include="..\ML.Common\ML.Common.csproj" />
   </ItemGroup>
 
 </Project>
