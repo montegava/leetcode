@@ -10,12 +10,17 @@ namespace ML.Week3.shortest_unsorted_continuous_subarray
     {
         public int FindUnsortedSubarray(int[] nums)
         {
-            // 3,1,2
-            // 2,6,4,8,1,9,15
-            // s
-            //         e
-            // sort
-            // 
+            var dic = new HashSet<int>();
+
+            for (var i = 0; i < nums.Length; i++)
+            {
+                if (!dic.Contains(nums[i]))
+                    dic.Add(nums[i]);
+                else
+                    dic.Remove(nums[i]);
+            }
+
+            return dic.ToArray();
 
             var desc = true;
             var ask = true;
