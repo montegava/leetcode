@@ -23,7 +23,14 @@ namespace ML.Microsoft
                 return x * x;
 
 
-            return x * x * MyPow(x, n - 2);
+            if (n % 2 == 0)
+            {
+                return MyPow(x * x, n / 2);
+            }
+            else
+            {
+                return x * MyPow(x * x, n / 2);
+            }
         }
     }
 }
