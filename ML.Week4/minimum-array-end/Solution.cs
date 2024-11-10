@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ML.Week4.minimum_array_end
 {
-    internal class Class1
+    public class Solution
     {
+        public long MinEnd(int n, int x)
+        {
+
+        }
     }
 }
