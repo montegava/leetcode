@@ -1,4 +1,4 @@
-﻿namespace Week1.common;
+﻿namespace ML.Common.common;
 
 public class TreeNode
 {
