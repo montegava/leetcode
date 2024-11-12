@@ -27,7 +27,7 @@ namespace ML.Microsoft
 
                 if (n.left == null && n.right == null && sum == targetSum)
                 {
-                    res.Add(path);
+                    res.Add(new List<int>(path));
                 }
                 else
                 {
