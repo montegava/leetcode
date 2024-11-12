@@ -95,10 +95,7 @@ class Result
         var totalPages = 1f;
 
 
-        var vovels   =      new HashSet<char>() { 'A', 'a', 'E', 'e', 'I', 'i', 'O', 'o', 'U', 'u' };
-        var stack = new Stack<char>();
-
-        stack.Pop
+  
         
 
         // TODO: the best practise to use httpclientfactory
@@ -107,7 +104,7 @@ class Result
             while (currentPage <=totalPages)
             {
                 // TODO: retry policy + check error codes
-                var response = await httpClient.GetStringAsync(BuildUrl(city, currentPage));
+                var response =  httpClient.GetStringAsync(BuildUrl(city, currentPage)).Result;
                 var dto = JsonConvert.DeserializeObject<Root>(response);
                 totalPages = dto.TotalPages;
 
