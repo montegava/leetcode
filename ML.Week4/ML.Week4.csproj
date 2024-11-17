@@ -11,8 +11,4 @@
     <ProjectReference Include="..\ML.Common\ML.Common.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="first-missing-positive\" />
-  </ItemGroup>
-
 </Project>
