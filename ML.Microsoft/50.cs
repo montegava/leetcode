@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ML.Microsoft
 {
-    public class Solution
+    public class Solution1
     {
         public double MyPow(double x, int n)
         {

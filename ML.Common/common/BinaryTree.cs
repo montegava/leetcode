@@ -1,4 +1,6 @@
-﻿namespace Week1.common;
+﻿using ML.Common.common;
+
+namespace Week1.common;
 
 public class BinaryTree
 {

@@ -20,7 +20,7 @@ namespace ML.Week3.shortest_unsorted_continuous_subarray
                     dic.Remove(nums[i]);
             }
 
-            return dic.ToArray();
+             
 
             var desc = true;
             var ask = true;
