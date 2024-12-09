@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,52 +11,34 @@ namespace ML.Week5.search_a_2d_matrix_ii
     {
         public bool SearchMatrix(int[][] matrix, int target)
         {
-            var cols = matrix.Length;
-            var rows = matrix[0].Length;
+            if (matrix == null || matrix.Length == 0 || matrix[0].Length == 0)
+                return false;
 
-
-            var fromi = 0;
-            var toi = cols - 1;
-
-            var fromj = 0;
-            var toj = rows - 1;
-
-
-            var midi = (toi - fromi) / 2;
-            var midj = (toj - fromj) / 2;
-            
-          
-
-            bool dfs(int i, int j)
+            bool dfs(int top, int left, int down, int right)
             {
-                if (i >= cols || j >= rows || i < 0 || j < 0 || i >j )
+                if (top > down || left > right)
                     return false;
 
-                if (matrix[i][j] == target)
-                    return true;
+                if (target < matrix[top][left] || target > matrix[down][right])
+                    return false;
 
-                if (matrix[i][j] > target)
+
+                var midCol = left +  (right - left) / 2;
+
+                var midRow = top;
+
+                while (midRow <= down &&   matrix[midRow][midCol] <= target)
                 {
-                    fromi = fromi;
-                    toi = i;
-                    fromj = fromj;
-                    toj = j;
-                    midi = toi - fromi > 1 ? (toi - fromi) / 2 + i : i - 1;
-                    midj = toj - fromj > 1 ? (toj - fromj) / 2 + j : j - 1;
-
-                    return dfs(midi, midj);
+                    if (matrix[midRow][midCol] == target)
+                        return true;
+                    midRow++;
                 }
 
-                fromi = i;
-                toi = toi;
-                fromj = j;
-                toj = toj;
-                midi = toi - fromi > 1 ? (toi - fromi) / 2  + i : i + 1;
-                midj = toj - fromj > 1 ? (toj - fromj) / 2 + j : j + 1;
-                return dfs(midi, midj);
+                return dfs(midRow, left, down, midCol - 1) || dfs(top, midCol + 1, midRow - 1, right);
+
             }
 
-            return dfs(midj,midj);
+            return dfs(0, 0, matrix.Length - 1, matrix[0].Length - 1);
         }
     }
 }
