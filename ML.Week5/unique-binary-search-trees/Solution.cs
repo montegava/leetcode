@@ -8,9 +8,6 @@ namespace ML.Week5.unique_binary_search_trees
 {
     public class Solution
     {
-        public int NumTrees(int n)
-        {
-
-        }
+       
     }
 }
