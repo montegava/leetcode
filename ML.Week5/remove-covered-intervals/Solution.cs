@@ -18,7 +18,7 @@ namespace ML.Week5.remove_covered_intervals
             Array.Sort(intervals, (i1, i2) =>
             {
                 if (i1[0] == i2[0])
-                    return i1[1] - i2[1];
+                    return i2[1] - i1[1];
                 return i1[0] - i2[0];
             });
 
