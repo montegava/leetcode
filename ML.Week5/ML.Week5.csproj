@@ -7,8 +7,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Folder Include="least-number-of-unique-integers-after-k-removals\" />
-  </ItemGroup>
-
 </Project>
